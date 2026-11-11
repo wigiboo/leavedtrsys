@@ -19,9 +19,13 @@
       <div class="label">Workspace</div>
       <nav class="nav" id="nav">
         <button class="active" data-view="dashboard"><span class="ico">▦</span>Overview</button>
+<<<<<<< HEAD
         <button data-view="form6"><span class="ico">▧</span>Form No. 6</button><button data-view="leaves"><span class="ico">▤</span>Leave requests</button>
         <button data-view="balances"><span class="ico">◫</span>Employee leave tracker</button>
         <button data-view="admin"><span class="ico">▣</span>Admin panel</button>
+=======
+        <button data-view="leaves"><span class="ico">▤</span>Leave requests</button>
+>>>>>>> c829ebc5da333a1ac7c06dcda39749e785ebdab1
         <button data-view="attendance"><span class="ico">◷</span>Attendance / DTR</button>
         <button data-view="feedback"><span class="ico">✉</span>Feedback</button>
         <button data-view="people"><span class="ico">♙</span>People</button>
@@ -31,7 +35,11 @@
       <div class="nav side-bottom"><button data-view="profile"><span class="ico">◉</span>My profile</button></div>
     </aside>
     <main class="main">
+<<<<<<< HEAD
       <header class="topbar"><div class="crumb"><span id="school-crumb">UPI Elementary School</span>　/　<span id="crumb">Overview</span></div><div class="tools"><button class="btn outline sm" id="theme-toggle" type="button">Dark mode</button><button class="icon" id="notifications" title="Notifications">♧<span class="dot"></span></button><div class="person"><img class="avatar photo" alt="Profile photo" hidden><span class="avatar initials">M</span><span class="person-name"><strong id="top-name">Michael Ron Dimaano</strong><small><select id="preview-role" aria-label="Preview role"><option>Employee</option><option>Admin / Personnel Officer</option><option>Approving Authority / Superintendent</option></select> · Philippines</small></span></div></div></header>
+=======
+      <header class="topbar"><div class="crumb"><span id="school-crumb">UPI Elementary School</span>　/　<span id="crumb">Overview</span></div><div class="tools"><button class="icon" id="notifications" title="Notifications">♧<span class="dot"></span></button><div class="person"><img class="avatar photo" alt="Profile photo" hidden><span class="avatar initials">M</span><span class="person-name"><strong id="top-name">Michael Ron Dimaano</strong><small>School administrator · Philippines</small></span></div></div></header>
+>>>>>>> c829ebc5da333a1ac7c06dcda39749e785ebdab1
       <div class="content">
         <div id="toast" class="toast hidden" role="status"></div>
         <section class="view" id="view-dashboard">
@@ -84,6 +92,7 @@
     document.querySelector('#save-school').onclick=()=>{const n=document.querySelector('#school-name').value;document.querySelector('.school strong').textContent=n;document.querySelector('.crumb').firstChild.textContent=n+'　/　';toast('School name updated in this preview.')};document.querySelector('#notifications').onclick=()=>toast('You have 3 pending leave requests.');document.querySelector('#export').onclick=()=>{const csv=['Name,Role,Start,End,Reason,Status',...leaves.map(x=>[x.name,x.role,x.start,x.end,x.reason,x.status].map(v=>'"'+String(v).replaceAll('"','""')+'"').join(','))].join('\n'),a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='leave-report.csv';a.click();URL.revokeObjectURL(a.href)};
     const savedName=localStorage.getItem('upi-preview-name-v2')||'Michael Ron Dimaano';document.querySelector('#top-name').textContent=savedName;document.querySelector('#profile-display').textContent=savedName;document.querySelector('#profile-name').value=savedName;document.querySelectorAll('.initials').forEach(x=>x.textContent=savedName.trim().charAt(0).toUpperCase());const savedPhoto=localStorage.getItem('upi-preview-avatar-v2');if(savedPhoto){document.querySelectorAll('.photo').forEach(x=>{x.src=savedPhoto;x.hidden=false});document.querySelectorAll('.initials').forEach(x=>x.hidden=true)}document.querySelector('#school-crumb').textContent=localStorage.getItem('upi-preview-school-v2')||'UPI Elementary School';document.querySelector('.school strong').textContent=document.querySelector('#school-crumb').textContent;document.querySelector('#school-name').value=document.querySelector('#school-crumb').textContent;document.querySelector('#profile-picture').onchange=e=>{const file=e.target.files[0];if(!file)return;if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>3*1024*1024){toast('Choose a JPG, PNG, or WebP image under 3 MB.');e.target.value='';return}const reader=new FileReader();reader.onload=()=>{localStorage.setItem('upi-preview-avatar-v2',reader.result);document.querySelectorAll('.photo').forEach(x=>{x.src=reader.result;x.hidden=false});document.querySelectorAll('.initials').forEach(x=>x.hidden=true);toast('Profile picture saved in this browser.')};reader.readAsDataURL(file)};document.querySelector('#save-school').onclick=()=>{const n=document.querySelector('#school-name').value.trim()||'UPI Elementary School';document.querySelector('#school-crumb').textContent=n;document.querySelector('.school strong').textContent=n;localStorage.setItem('upi-preview-school-v2',n);toast('School name saved in this browser.')};render();
   </script>
+<<<<<<< HEAD
   <script src="form6.js"></script>
   <script src="leave-admin.js"></script>
 </body>
@@ -93,3 +102,11 @@
 
 
 
+=======
+</body>
+</html>
+
+
+
+
+>>>>>>> c829ebc5da333a1ac7c06dcda39749e785ebdab1
