@@ -13,3 +13,8 @@
 .registration-panel{margin:12px 0;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--ice)}.registration-panel summary{font-weight:700;color:var(--navy);cursor:pointer}.dark .registration-panel summary{color:#dce8ff}
 
 .form6-check input{width:12px;height:12px;margin:2px 0 0;accent-color:#102a63}
+
+/* Clearer status, classification, action, and table states */
+.classification-badge.non-teaching{background:#f3e8ff;color:#6b21a8;border-color:#d8b4fe}.status.pending{background:#fef3c7;color:#92400e}.status.approved{background:#dcfce7;color:#166534}.status.disapproved,.status.rejected{background:#fee2e2;color:#991b1b}.btn.approve{background:#16805d;color:#fff}.btn.reject{background:#b42318;color:#fff}.btn.manage{background:#1d4ed8;color:#fff}.table-wrap tbody tr:hover{background:color-mix(in srgb,var(--soft) 55%,transparent)}.field>small{line-height:1.4}.field input[readonly]{background:var(--soft);font-weight:700}.section-head{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.dark .classification-badge.non-teaching{background:#39264f;color:#ead7ff;border-color:#8b5cb5}
+.btn:focus-visible,a:focus-visible{outline:3px solid #f0a22e;outline-offset:2px}
